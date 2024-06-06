@@ -12,7 +12,7 @@ import {
 import { formatCurrency } from './utils'
 
 export async function fetchRevenue() {
-
+  noStore();
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
 
   try {
