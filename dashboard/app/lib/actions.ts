@@ -1,6 +1,8 @@
 'use server';
 import { z } from 'zod';
- 
+import { revalidatePath } from 'next/cache';
+
+
 const FormSchema = z.object({
   id: z.string(),
   customerId: z.string(),
@@ -26,6 +28,5 @@ export async function createInvoice(formData: FormData) {
     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
   `;
 
-  // Test it out:
-  console.log(rawFormData);
+  revalidatePath('/dashboard/invoices');
 }
