@@ -1,1 +1,1 @@
-This is the readme for Insight application. to be update
+This is the readme for Reckon application.
